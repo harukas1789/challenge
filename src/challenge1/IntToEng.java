@@ -19,12 +19,14 @@
 	    // 数値を英訳する変換するメソッド
 	
 	    static String translateEng(int n) {
-	    	
-	    	if(n/10==1){//10~19
-	    		return print3(n);
+	    	if(n>=1000){
+	    		return print5(n);
 	    	}
 	    	if(n>=100){//100~999
 	    		return print4(n);
+	    	}
+	    	if(n/10==1){//10~19
+	    		return print3(n);
 	    	}
 	    	
 	    	if(n>=20){//20~99
@@ -95,14 +97,28 @@
 		}
 	    	return s;
 	    }
+	    
 	    public static String  print4 (int n) {
 	    	String s="";
 	    	s=print1(n/100)+"hundred ";//百の位確定
-	    	/*if((n/10)%10){
+	    	if((n/10)%10==1){//10~19
 	    		s=s+print3(n-(n/100*100));
 	    	}
-	    	else{
+	    	else{//1~9,20~99
 	    		s=s+print2(n-(n/100*100));
+	    	}
+	    	return s;
+	    }
+	    public static String print5 (int n){
+	    	String s="";
+	    	s=print1(n/1000)+"thousand";//千の位
+	    	
+	    	/*if(){//100~999
+	    	s=s+print4(n-(n/1000*1000));
+	    	}else if(){//10~19
+	    		s=s+print3(n);
+	    	}else{//20~99
+	    		s=s+print2(n);
 	    	}*/
 	    	return s;
 	    }
