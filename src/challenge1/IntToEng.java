@@ -23,6 +23,10 @@
 	    	if(n/10==1){//10~19
 	    		return print3(n);
 	    	}
+	    	if(n>=100){//100~999
+	    		return print4(n);
+	    	}
+	    	
 	    	if(n>=20){//20~99
 	    		return print2(n);
 	    	}
@@ -47,6 +51,7 @@
 			case 8: s = "eight"; break;
 			case 9: s = "nine"; break;
 		}
+	    	
 	    	return s;
 	    }
 	    
@@ -88,6 +93,17 @@
 			case 8: s= "eighteen"; break;
 			case 9: s= "nineteen"; break;
 		}
+	    	return s;
+	    }
+	    public static String  print4 (int n) {
+	    	String s="";
+	    	s=print1(n/100)+"hundred ";//百の位確定
+	    	/*if((n/10)%10){
+	    		s=s+print3(n-(n/100*100));
+	    	}
+	    	else{
+	    		s=s+print2(n-(n/100*100));
+	    	}*/
 	    	return s;
 	    }
 	}
