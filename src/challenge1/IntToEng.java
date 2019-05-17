@@ -74,7 +74,7 @@
 	    	String s1=print1(n%10);
     		String s;
     		if(s1!=""){
-    		s=s2+" - "+s1;
+    		s=s2+" "+s1;
     		}
     		else{
     			s=s2;
@@ -112,13 +112,9 @@
 	    }
 	    public static String print5 (int n){
 	    	String s="";
-	    	if(n/1000>=100){
-	    	s=print4(n/1000)+"thousand ";//千の位
-	    	}else if(n/1000>=10){
-	    	s=print2(n/1000)+"thousand ";
-	    	}
+	    	s=print4(n/1000)+"thousand ";
 	    	if((n%1000)/100>=1){//100~999
-	    	s=s+print4(n%1000);
+	    		s=s+print4(n%1000);
 	    	}else if((n%1000)/10==1){//10~19
 	    		s=s+print3(n%1000);
 	    	}else{//20~99
